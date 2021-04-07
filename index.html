@@ -49,7 +49,7 @@
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">2020年4月</a>
+          <a href="/" id="subtitle">2020年4月7日</a>
         </h2>
       
     </div>
@@ -78,52 +78,36 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2020_04/linux源码地址" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-a" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2021/04/07/2020_04/linux%E6%BA%90%E7%A0%81%E5%9C%B0%E5%9D%80/" class="article-date">
-  <time class="dt-published" datetime="2021-04-07T07:52:36.340Z" itemprop="datePublished">2021-04-07</time>
+    <a href="/2021/04/07/a/" class="article-date">
+  <time class="dt-published" datetime="2021-04-07T08:07:10.000Z" itemprop="datePublished">2021-04-07</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/04/07/a/">a</a>
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>一直在做的Android，不了解Linux生态。突然想看看Linux源码发现挺不好找的，搞清楚后自己做一下记录，也希望帮助别人。</p>
-<p>有不了解的，欢迎指正。</p>
-<h1 id="官方网站"><a href="#官方网站" class="headerlink" title="官方网站"></a>官方网站</h1><p><a target="_blank" rel="noopener" href="https://www.kernel.org/">https://www.kernel.org/</a></p>
-<h1 id="git地址"><a href="#git地址" class="headerlink" title="git地址"></a>git地址</h1><p><img src="/image-20210407103357719.png" alt="image-20210407103357719"></p>
-<p>如官网写的，git的地址就是 <a target="_blank" rel="noopener" href="https://git.kernel.org/">https://git.kernel.org/</a></p>
-<p><img src="/image-20210407103458258.png" alt="image-20210407103458258"></p>
-<p>第一次进去有些懵。后来我的理解是这些可能都是关于Linux的项目，又知道Linux kernel的作者是<code>Linus Torvalds</code>，然后就搜到有下面这一条：</p>
-<p><img src="/image-20210407103704938.png" alt="image-20210407103704938"></p>
-<p>右面summary按钮点进去 <a target="_blank" rel="noopener" href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/">https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/</a></p>
-<p><img src="/image-20210407103803048.png" alt="image-20210407103803048"></p>
-<p>下面是git的地址</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git:&#x2F;&#x2F;git.kernel.org&#x2F;pub&#x2F;scm&#x2F;linux&#x2F;kernel&#x2F;git&#x2F;torvalds&#x2F;linux.git</span><br></pre></td></tr></table></figure>
+        <h1 id="haha"><a href="#haha" class="headerlink" title="haha"></a>haha</h1><img src="/2021/04/07/a/linux_tar.png" class="">
 
-<p>就能下载下来了。</p>
-<p>这个地址我下载速度非常慢，不过公司网络一晚上也下载下来了。另外两个地址没有试过。</p>
-<p>其实google搜索，大概率会搜到<a target="_blank" rel="noopener" href="https://github.com/torvalds/linux%E8%BF%99%E4%B8%AA%E5%9C%B0%E5%9D%80%EF%BC%8C%E8%BF%99%E4%B8%AA%E9%80%9F%E5%BA%A6%E6%98%AF%E6%AF%94%E8%BE%83%E5%BF%AB%E7%9A%84%EF%BC%8C%E7%84%B6%E5%90%8E%E5%AF%B9%E6%AF%94git">https://github.com/torvalds/linux这个地址，这个速度是比较快的，然后对比git</a> log和上面是一样的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git@github.com:torvalds&#x2F;linux.git</span><br></pre></td></tr></table></figure>
-
-<p>下载下来看看源码：</p>
-<p>Makefile中最上面是一些版本信息</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SPDX-License-Identifier: GPL-2.0</span></span><br><span class="line">VERSION = 5</span><br><span class="line">PATCHLEVEL = 12</span><br><span class="line">SUBLEVEL = 0</span><br><span class="line">EXTRAVERSION = -rc6 </span><br><span class="line">NAME = Frozen Wasteland</span><br></pre></td></tr></table></figure>
-
-<h1 id="压缩包"><a href="#压缩包" class="headerlink" title="压缩包"></a>压缩包</h1><p><img src="/linux_tar.png"></p>
-<p>画圈的连接可以下载源码的压缩包，代码是一样的，但是没有git记录。如果只是看代码是没问题的。</p>
-<h1 id="给源码提交代码"><a href="#给源码提交代码" class="headerlink" title="给源码提交代码"></a>给源码提交代码</h1><p>如果有能力给源码提交代码，可以参考官方文档</p>
-<p><a target="_blank" rel="noopener" href="https://www.kernel.org/doc/html/latest/process/submitting-patches.html">https://www.kernel.org/doc/html/latest/process/submitting-patches.html</a></p>
-<p>后面可以搬运翻译一下，再出一篇博客。</p>
-<p>另外为什么说<code>git://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git</code>是源码地址呢，也是从这个文档看出来的。</p>
-<p><img src="/image-20210407105722440.png" alt="image-20210407105722440"></p>
+<p>ina</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jackfrued.top/2021/04/07/2020_04/linux%E6%BA%90%E7%A0%81%E5%9C%B0%E5%9D%80/" data-id="ckn75nlqs0001fgjxh23shimc" data-title="" class="article-share-link">Teilen</a>
+      <a data-url="http://jackfrued.top/2021/04/07/a/" data-id="ckn76exmh0000n2jxdo31ah2p" data-title="a" class="article-share-link">Teilen</a>
       
       
       
@@ -174,7 +158,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://jackfrued.top/2021/04/07/hello-world/" data-id="ckn75nlpm0000fgjx33r92ubh" data-title="Hello World" class="article-share-link">Teilen</a>
+      <a data-url="http://jackfrued.top/2021/04/07/hello-world/" data-id="ckn76exmm0001n2jxez7idk72" data-title="Hello World" class="article-share-link">Teilen</a>
       
       
       
@@ -217,7 +201,7 @@
       <ul>
         
           <li>
-            <a href="/2021/04/07/2020_04/linux%E6%BA%90%E7%A0%81%E5%9C%B0%E5%9D%80/">(no title)</a>
+            <a href="/2021/04/07/a/">a</a>
           </li>
         
           <li>
